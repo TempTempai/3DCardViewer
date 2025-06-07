@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky> -->
+       
+  
+<a-camera position="0 0 1" look-controls="enabled: true" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable">
+        </a-camera>
+
+
+<!--<a-plane color="#7BC8A4" position="0 0 0" height="1" width="1" rotation="0 0 0"></a-plane>-->
+<a-sky color="#ECECEC"></a-sky>
+
+        <a-entity id="mytarget" >
+          <a-plane color="#FF0000" src="#card" position="0 0 -0.02" height="1" width="1" rotation="0 0 0"></a-plane>
+
+          <a-entity visible=true id="portfolio-panel" position="0 0 -0.01">
+            <a-text value="Portfolio" color="black" align="center" width="2" position="0 0.4 0">Test</a-text>
+            <a-entity id="portfolio-item0">
+             <!-- <a-video id="paintandquest-video-link" webkit-playsinline playsinline width="1" height="0.552" position="0 0 0"></a-video>
+              <a-image id="paintandquest-preview-button" class="clickable" src="#paintandquest-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
+              </a-image>
+           --> </a-entity>
+            <a-entity id="portfolio-item1" visible=true>
+              <a-image class="clickable" src="#coffeemachine-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
+              </a-image>
+            </a-entity>
+            <a-entity id="portfolio-item2" visible=true>
+              <a-image class="clickable" src="#peak-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
+              </a-image>
+            </a-entity>
+
+            <a-image visible=true id="portfolio-left-button" class="clickable" src="#icon-left" position="-0.7 0 0" height="0.15" width="0.15"></a-image>
+            <a-image visible=true id="portfolio-right-button" class="clickable" src="#icon-right" position="0.7 0 0" height="0.15" width="0.15"></a-image>
+          </a-entity>
+
+          <a-image visible=true id="profile-button" class="clickable" src="#icon-profile" position="-0.42 -0.5 0" height="0.15" width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-image visible=true id="web-button" class="clickable" src="#icon-web" alpha-test="0.5" position="-0.14 -0.5 0" height="0.15" width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-image visible=true id="email-button" class="clickable" src="#icon-email"  position="0.14 -0.5 0" height="0.15" width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-image visible=true id="location-button" class="clickable" src="#icon-location" position="0.42 -0.5 0" height="0.15" width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+         <!-- <a-gltf-model id="avatar" rotation="0 0 0" position="0 -0.25 0" scale="0.004 0.004 0.004" src="#avatarModel"></a-gltf-model>
+-->
+          <a-text id="text" class="clickable" value="" color="black" align="center" width="2" position="0 -1 0" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5"></a-text>
+        </a-entity>
+
+
+<!--
+
+      <a-assets>
+          <img id="card" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/card.png" />
+          <img id="icon-web" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/icons/web.png" />
+          <img id="icon-location" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/icons/location.png" />
+          <img id="icon-profile" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/icons/profile.png" />
+          <img id="icon-phone" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/icons/phone.png" />
+          <img id="icon-email" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/icons/email.png" />
+          <img id="icon-play" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/icons/play.png" />
+          <img id="icon-left" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/icons/left.png" />
+          <img id="icon-right" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/icons/right.png" />
+          <img id="paintandquest-preview" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/portfolio/paintandquest-preview.png" />
+          <video id="paintandquest-video-mp4" autoplay="false" loop="true" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/portfolio/paintandquest.mp4"></video>
+          <video id="paintandquest-video-webm" autoplay="false" loop="true" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/portfolio/paintandquest.webm"></video>
+          <img id="coffeemachine-preview" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/portfolio/coffeemachine-preview.png" />
+          <img id="peak-preview" src="https://raw.githubusercontent.com/hiukim/mind-ar-js-doc/refs/heads/master/static/samples/assets/card-example/portfolio/peak-preview.png" />
+          
+          <a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable">
+        </a-camera>
+
+        <a-entity id="mytarget" mytarget mindar-image-target="targetIndex: 0">
+          <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+
+          <a-entity visible=false id="portfolio-panel" position="0 0 -0.01">
+            <a-text value="Portfolio" color="black" align="center" width="2" position="0 0.4 0"></a-text>
+            <a-entity id="portfolio-item0">
+              <a-video id="paintandquest-video-link" webkit-playsinline playsinline width="1" height="0.552" position="0 0 0"></a-video>
+              <a-image id="paintandquest-preview-button" class="clickable" src="#paintandquest-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
+              </a-image>
+            </a-entity>
+            <a-entity id="portfolio-item1" visible=false>
+              <a-image class="clickable" src="#coffeemachine-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
+              </a-image>
+            </a-entity>
+            <a-entity id="portfolio-item2" visible=false>
+              <a-image class="clickable" src="#peak-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
+              </a-image>
+            </a-entity>
+
+            <a-image visible=false id="portfolio-left-button" class="clickable" src="#icon-left" position="-0.7 0 0" height="0.15" width="0.15"></a-image>
+            <a-image visible=false id="portfolio-right-button" class="clickable" src="#icon-right" position="0.7 0 0" height="0.15" width="0.15"></a-image>
+          </a-entity>
+
+          <a-image visible=false id="profile-button" class="clickable" src="#icon-profile" position="-0.42 -0.5 0" height="0.15" width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-image visible=false id="web-button" class="clickable" src="#icon-web" alpha-test="0.5" position="-0.14 -0.5 0" height="0.15" width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-image visible=false id="email-button" class="clickable" src="#icon-email"  position="0.14 -0.5 0" height="0.15" width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-image visible=false id="location-button" class="clickable" src="#icon-location" position="0.42 -0.5 0" height="0.15" width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-gltf-model id="avatar" rotation="0 0 0" position="0 -0.25 0" scale="0.004 0.004 0.004" src="#avatarModel"></a-gltf-model>
+
+          <a-text id="text" class="clickable" value="" color="black" align="center" width="2" position="0 -1 0" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5"></a-text>
+        </a-entity>
+       -->
+    </a-scene>
+  </body>
+</html>
