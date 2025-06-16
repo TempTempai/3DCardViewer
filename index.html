@@ -9,8 +9,8 @@
     <!--<a-scene mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/card-example/card.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">-->
     <a-scene mindar-image="imageTargetSrc: ./targetsrb.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
-        <a-asset-item id="avatarModelr" src="./safe4.glb"></a-asset-item>
-        <a-asset-item id="avatarModelb" src="./safe4.glb"></a-asset-item>
+        <a-asset-item id="avatarModelr" src="./safemodelr.glb"></a-asset-item>
+        <a-asset-item id="avatarModelb" src="./safemodelb.glb"></a-asset-item>
       </a-assets>
 
 
@@ -18,11 +18,11 @@
       
       <a-entity mindar-image-target="targetIndex: 0">
         <!--<a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>-->
-        <a-gltf-model rotation="90 0 0 " position="0 0 0.1" scale="2 2 2" src="#avatarModelr" animation-mixer>
+        <a-gltf-model rotation="90 0 0 " position="0 0 0.1" scale="1 1 1" src="#avatarModelr" animation-mixer>
       </a-entity>
       <a-entity mindar-image-target="targetIndex: 1">
         <!--<a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>-->
-        <a-gltf-model rotation="90 0 0 " position="0 0 0.1" scale="2 2 2" src="#avatarModelb" animation-mixer>
+        <a-gltf-model rotation="90 0 0 " position="0 0 0.1" scale="1 1 1" src="#avatarModelb" animation-mixer>
       </a-entity>
 
       <!--<a-entity mindar-image-target="targetIndex: 0">
